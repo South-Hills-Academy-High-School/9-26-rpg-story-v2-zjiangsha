@@ -46,7 +46,9 @@ function happyEnding () {
     return happy1
 }
 function imSorry () {
-	
+    imsorry1 = createScript("Mr.Kao", "OK, I'm sorry", 1)
+    imsorry2 = createScript("abc", "abc", 1)
+    imsorry3 = createScript("abc", "abc", 1)
 }
 // microsoft/arcade-block-objects
 // 
@@ -180,6 +182,9 @@ let currentScript: blockObject.BlockObject = null
 let nextPage: blockObject.BlockObject = null
 let startScript: blockObject.BlockObject = null
 let choiceIndex = 0
+let imsorry3: blockObject.BlockObject = null
+let imsorry2: blockObject.BlockObject = null
+let imsorry1: blockObject.BlockObject = null
 let happy4: blockObject.BlockObject = null
 let happy3: blockObject.BlockObject = null
 let happy2: blockObject.BlockObject = null
