@@ -14,6 +14,8 @@ namespace AnyProp {
     export const Choice1 = AnyProp.create()
     export const Choice2 = AnyProp.create()
 }
+/**
+ */
 // Cloud portraits:
 // 
 // 0 = happy
@@ -96,13 +98,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         printCurrentScript()
     }
 })
+function noMoneyForYou () {
+    nomoneyforyou1 = createScript("Mr.Kao", "I'm tired of you always asking me for money! GO AWAY!", 1)
+    return nomoneyforyou1
+}
 function finalChoice () {
     FinalChoice1 = createScript("Old Man", "Well, I just need enough water for this garden here", 0)
     FinalChoice2 = createScript("Cloud", "I can make that happen! What's the magic word?", 0)
     blockObject.setAnyProperty(FinalChoice1, AnyProp.NextPage, FinalChoice2)
     blockObject.setStringArrayProperty(FinalChoice2, StrArrayProp.Choices, ["Please!", "Abracadabra!"])
     blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice1, happyEnding())
-    blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice2, 0)
+    blockObject.setAnyProperty(FinalChoice2, AnyProp.Choice2, noMoneyForYou())
     return FinalChoice1
 }
 function updateChoices () {
@@ -138,6 +144,9 @@ function printCurrentScript () {
         }
     })
 }
+function nomoneyforyou2 () {
+	
+}
 function imAnOldMan () {
     oldman1 = createScript("Mr. Kao", "I'm just an old man and I spent all my money gambling, please help me!!!", 3)
     oldman2 = createScript("Pineapple", "OK, just give me $2 and I will get you water", 3)
@@ -165,6 +174,7 @@ let oldman1: blockObject.BlockObject = null
 let printingStuff = false
 let FinalChoice2: blockObject.BlockObject = null
 let FinalChoice1: blockObject.BlockObject = null
+let nomoneyforyou1: blockObject.BlockObject = null
 let makingChoice = false
 let currentScript: blockObject.BlockObject = null
 let nextPage: blockObject.BlockObject = null
